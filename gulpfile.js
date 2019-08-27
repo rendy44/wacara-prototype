@@ -13,7 +13,7 @@ const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
-const uglify = require("gulp-uglify");
+const uglify = require('gulp-uglify-es').default;
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -52,16 +52,16 @@ function clean() {
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
     // Bootstrap
-    var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
+    const bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
         .pipe(gulp.dest('./dist/vendor/bootstrap'));
     // Font Awesome CSS
-    var fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
+    const fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/**/*')
         .pipe(gulp.dest('./dist/vendor/fontawesome-free/css'));
     // Font Awesome Webfonts
-    var fontAwesomeWebfonts = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*')
+    const fontAwesomeWebfonts = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*')
         .pipe(gulp.dest('./dist/vendor/fontawesome-free/webfonts'));
     // jQuery
-    var jquery = gulp.src(['./node_modules/jquery/dist/*', '!./node_modules/jquery/dist/core.js'])
+    const jquery = gulp.src(['./node_modules/jquery/dist/*', '!./node_modules/jquery/dist/core.js'])
         .pipe(gulp.dest('./dist/vendor/jquery'));
     return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery);
 }
@@ -79,7 +79,7 @@ function pugToHtml() {
 // Image minify
 function imageminify() {
     return gulp
-        .src(['./img/*', './img/*/*'])
+        .src(['./img/*', './img/**/*'])
         .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'))
 }
@@ -87,7 +87,7 @@ function imageminify() {
 // CSS task
 function css() {
     return gulp
-        .src("./scss/**/*.scss")
+        .src(["./scss/**/*.scss", "./scss/*.scss"])
         .pipe(plumber())
         .pipe(sass({
             outputStyle: "expanded",
@@ -132,10 +132,10 @@ function js() {
 
 // Watch files
 function watchFiles() {
-    gulp.watch("./scss/**/*", css);
+    gulp.watch(["./scss/**/*", "./scss/*"], css, browserSyncReload);
     gulp.watch(["./img/*", "./img/*/*"], imageminify);
-    gulp.watch(["./templates/*", './templates/*/*', './templates/*/*/*'], pugToHtml);
-    gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
+    gulp.watch(["./templates/*", './templates/**/*', './templates/**/**/*'], pugToHtml, browserSyncReload);
+    gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js, browserSyncReload);
     gulp.watch("./**/*.html", browserSyncReload);
 }
 

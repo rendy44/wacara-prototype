@@ -1,0 +1,21 @@
+//- Navigation
+nav.navbar.navbar-expand-lg.navbar-light.fixed-top
+    .container
+        a.navbar-brand(href='#')
+          img(src='./img/sample-logo.png', alt='')
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+                li.nav-item.active
+                    a.nav-link(href='#about')
+                        | About
+                        span.sr-only (current)
+                li.nav-item
+                    a.nav-link(href='#speakers') Speakers
+                li.nav-item
+                    a.nav-link(href='#schedule') Schedule
+                li.nav-item
+                    a.nav-link(href='#gallery') Gallery
+                li.nav-item.register
+                    a.nav-link(href='#register') Register Now
