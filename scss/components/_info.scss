@@ -1,0 +1,47 @@
+section.info {
+  .info-item {
+    margin-bottom: 1rem;
+    text-align: center;
+
+    @include breakpoint(768) {
+      text-align: left;
+    }
+
+    i.fa {
+      margin-bottom: 1rem;
+
+      &:after {
+        content: '';
+        width: 70px;
+        height: 70px;
+        @include border-radius(50%);
+        background-color: rgba(lighten($primary_color, 15%), .2);
+        position: absolute;
+        top: -25px;
+        left: calc(50% - 10px);
+        @include breakpoint(768) {
+          left: 10px;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      @include breakpoint(768) {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+      @include breakpoint(992) {
+        font-weight: 500;
+      }
+    }
+
+    p {
+      text-align: justify;
+      @include breakpoint(768) {
+        text-align: left;
+      }
+    }
+  }
+}

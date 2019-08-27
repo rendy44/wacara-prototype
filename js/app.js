@@ -9,7 +9,7 @@
         scrollbar() {
             $(window).scroll(function () {
                 const nav = $('nav.navbar'),
-                    top = 100;
+                    top = 50;
                 if ($(window).scrollTop() >= top) {
                     nav.addClass('scrolled');
                 } else {
