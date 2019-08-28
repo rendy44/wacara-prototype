@@ -2,16 +2,16 @@ section {
   padding-top: 3rem;
   padding-bottom: 3rem;
   @include breakpoint(768) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
   @include breakpoint(992) {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  @include breakpoint(1200) {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+  @include breakpoint(1200) {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
   }
 
   h2.section-heading {
@@ -20,11 +20,11 @@ section {
     @include gradient-color;
 
     @include breakpoint(768) {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
     }
 
     @include breakpoint(992) {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
     }
 
     &:before {

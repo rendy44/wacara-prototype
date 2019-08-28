@@ -1,0 +1,52 @@
+#speakers {
+  .container {
+    .row {
+      .speaker-item {
+        .card {
+          overflow: hidden;
+
+          &:hover {
+            .card-body {
+              bottom: 0;
+              background-color: rgba(darken($primary_color, 50%), .7);
+            }
+          }
+
+          .card-body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: calc(-.5rem + -24px);
+            background-color: rgba(darken($primary_color, 50%), .5);
+            color: $white;
+            padding: 10px;
+            @include transition(all .2s);
+
+            .card-text {
+              font-style: italic;
+              margin-bottom: .5rem;
+              @include breakpoint(768) {
+                font-size: 90%;
+              }
+            }
+
+            .card-social {
+              a {
+                color: $white;
+                @include transition(all .2s);
+
+                &:not(:last-child) {
+                  margin-right: .4rem;
+                }
+
+                &:hover {
+                  color: rgba(darken($primary_color, 25%), .5);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
