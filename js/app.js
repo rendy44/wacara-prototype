@@ -33,9 +33,7 @@
             const window_width = $(window).width();
             let embed_class = '21by9';
             if (map_column.length) {
-                if (window_width >= 1200) {
-                    embed_class = '16by9';
-                } else if (window_width >= 992) {
+                if (window_width >= 992) {
                     embed_class = '4by3';
                 }
                 embed_wrapper.addClass('embed-responsive-' + embed_class);
