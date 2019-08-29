@@ -1,0 +1,29 @@
+section#venue.bg-light.venue
+    .container
+        .row
+            .col-lg-8.mx-auto.text-center.mb-3
+                h2.section-heading The Venue
+                p.lead We would like to introduce the special place where the event is going to be held
+        .row
+            .col-lg-6.col-map
+                .embed-responsive
+                    iframe.embed-responsive-item(src='https://maps.google.com/maps?q=Masjid%20pogung%20dalangan&t=&z=15&ie=UTF8&iwloc=&output=embed')
+            .col-lg-6.d-flex.flex-column
+                h3 Masjid Pogung Dalangan
+                p Pogung Dalangan SIA XVI, RT.11/RW.50, Pogung Kidul, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284
+                #gallery.carousel.slide(data-ride='carousel')
+                    // Indicators
+                    ul.carousel-indicators
+                        li.active(data-target='#gallery', data-slide-to='0')
+                        li(data-target='#gallery', data-slide-to='1')
+                    // The slideshow
+                    .carousel-inner
+                        .carousel-item.active
+                            img(src='img/image1.jpg', alt='Los Angeles')
+                        .carousel-item
+                            img(src='img/image2.jpg', alt='Chicago')
+                    // Left and right controls
+                    a.carousel-control-prev(href='#gallery', data-slide='prev')
+                        span.carousel-control-prev-icon
+                    a.carousel-control-next(href='#gallery', data-slide='next')
+                        span.carousel-control-next-icon

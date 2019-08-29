@@ -4,6 +4,7 @@
         constructor() {
             this.scrollbar();
             this.navbar_toggle();
+            this.map_height();
         }
 
         scrollbar() {
@@ -24,6 +25,21 @@
                 const nav = $(this).closest('nav');
                 nav.toggleClass('opened');
             })
+        }
+
+        map_height() {
+            const map_column = $('.col-map'),
+                embed_wrapper = map_column.find('.embed-responsive');
+            const window_width = $(window).width();
+            let embed_class = '21by9';
+            if (map_column.length) {
+                if (window_width >= 1200) {
+                    embed_class = '16by9';
+                } else if (window_width >= 992) {
+                    embed_class = '4by3';
+                }
+                embed_wrapper.addClass('embed-responsive-' + embed_class);
+            }
         }
     }
 
