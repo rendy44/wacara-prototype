@@ -10,8 +10,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6b75ff", endColorstr="#59b7ff", GradientType=1);
 }
 
-@mixin gradient-color() {
+@mixin gradient-bg() {
   @include linearGradient($primary_color, $primary_alt_color);
+}
+
+@mixin gradient-color() {
+  @include gradient-bg;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -81,15 +85,15 @@
   transition: $args;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+@mixin box-shadow($top, $left, $blur, $color, $outer:0, $inset: false) {
   @if $inset {
-    -webkit-box-shadow: inset $top $left $blur $color;
-    -moz-box-shadow: inset $top $left $blur $color;
-    box-shadow: inset $top $left $blur $color;
+    -webkit-box-shadow: inset $top $left $blur $outer $color !important;
+    -moz-box-shadow: inset $top $left $blur $outer $color !important;
+    box-shadow: inset $top $left $blur $outer $color !important;
   } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
+    -webkit-box-shadow: $top $left $blur $outer $color !important;
+    -moz-box-shadow: $top $left $blur $outer $color !important;
+    box-shadow: $top $left $blur $outer $color !important;
   }
 }
 
