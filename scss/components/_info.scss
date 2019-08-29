@@ -1,12 +1,17 @@
 //Styling for the about section
 section.info {
   .info-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 
     @include breakpoint(768) {
       text-align: left;
-      margin-bottom: 0;
+      &:first-child {
+        margin-bottom: 2rem;
+        @include breakpoint(992) {
+          margin-bottom: 0;
+        }
+      }
     }
 
     i.fa {
