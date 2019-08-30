@@ -6,11 +6,14 @@
             this.navbar_toggle();
             this.map_height();
             this.instance_plugins();
+            this.smooth_scroll_to();
         }
 
         instance_plugins() {
             // Enable aos animations.
-            AOS.init();
+            AOS.init({
+                disable: 'mobile'
+            });
             // Enable scrollspy.
             $('body').scrollspy({
                 target: ".navbar",
@@ -49,6 +52,20 @@
                 }
                 embed_wrapper.addClass('embed-responsive-' + embed_class);
             }
+        }
+
+        smooth_scroll_to() {
+            $(".scroll").on('click', function (event) {
+                if (this.hash !== "" && !$(this).hasClass('active')) {
+                    event.preventDefault();
+                    const hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 180
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
         }
     }
 
