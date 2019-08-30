@@ -60,10 +60,13 @@ function modules() {
     // Font Awesome Webfonts
     const fontAwesomeWebfonts = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*')
         .pipe(gulp.dest('./dist/vendor/fontawesome-free/webfonts'));
+    // AOS Animation
+    const aos = gulp.src('./node_modules/aos/dist/**/*')
+        .pipe(gulp.dest('./dist/vendor/aos'));
     // jQuery
     const jquery = gulp.src(['./node_modules/jquery/dist/*', '!./node_modules/jquery/dist/core.js'])
         .pipe(gulp.dest('./dist/vendor/jquery'));
-    return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery);
+    return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, aos, jquery);
 }
 
 // PUG task

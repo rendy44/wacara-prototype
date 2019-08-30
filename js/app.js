@@ -5,6 +5,11 @@
             this.scrollbar();
             this.navbar_toggle();
             this.map_height();
+            this.instance_plugins();
+        }
+
+        instance_plugins() {
+            AOS.init();
         }
 
         scrollbar() {

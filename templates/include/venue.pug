@@ -1,17 +1,17 @@
-section#venue.bg-light.venue
+section#venue.bg-light.venue(data-aos='zoom-in')
     .container
         .row
             .col-lg-8.mx-auto.text-center.mb-3
-                h2.section-heading The Venue
-                p.lead We would like to introduce the special place where the event is going to be held
+                h2.section-heading(data-aos='fade-left', data-aos-delay=200) The Venue
+                p.lead(data-aos='fade-right', data-aos-delay=400) We would like to introduce the special place where the event is going to be held
         .row
             .col-lg-6.col-map
-                .embed-responsive
+                .embed-responsive(data-aos='zoom-in', data-aos-delay=600)
                     iframe.embed-responsive-item(src='https://maps.google.com/maps?q=Masjid%20pogung%20dalangan&t=&z=15&ie=UTF8&iwloc=&output=embed')
             .col-lg-6.d-flex.flex-column
-                h3 Masjid Pogung Dalangan
-                p Pogung Dalangan SIA XVI, RT.11/RW.50, Pogung Kidul, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284
-                #gallery.carousel.slide(data-ride='carousel')
+                h3(data-aos='fade-left', data-aos-delay=800) Masjid Pogung Dalangan
+                p(data-aos='fade-left', data-aos-delay=1000) Pogung Dalangan SIA XVI, RT.11/RW.50, Pogung Kidul, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284
+                #gallery.carousel.slide(data-ride='carousel', data-aos='fade-left', data-aos-delay=1200)
                     // Indicators
                     ul.carousel-indicators
                         li.active(data-target='#gallery', data-slide-to='0')
