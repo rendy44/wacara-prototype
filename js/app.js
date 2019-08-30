@@ -9,7 +9,13 @@
         }
 
         instance_plugins() {
+            // Enable aos animations.
             AOS.init();
+            // Enable scrollspy.
+            $('body').scrollspy({
+                target: ".navbar",
+                offset: 180
+            })
         }
 
         scrollbar() {
