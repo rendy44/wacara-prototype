@@ -1,13 +1,20 @@
 extends include/layout.pug
 
 block content
-    include include/nav.pug
-    include include/header.pug
-    include include/about.pug
-    include include/speakers.pug
-    include include/venue.pug
-    include include/schedule.pug
-    include include/register.pug
+    ul
+        li
+            a(href='landing_1.html', target='_blank') Landing 1
+        li
+            a(href='landing_2.html', target='_blank') Landing 2 (Without Registration)
+        li
+            a(href='landing_3.html', target='_blank') Landing 3
+        li
+            a(href='landing_4.html', target='_blank') Landing 4
+        li
+            a(href='landing_5.html', target='_blank') Landing 5
+        li
+            a(href='landing_6.html', target='_blank') Landing 6
+
 
 block footer
     include include/footer.pug
