@@ -7,12 +7,44 @@
             this.map_height();
             this.instance_plugins();
             this.smooth_scroll_to();
+            this.count_down();
+        }
+
+        count_down() {
+            const countdown = $('#countdown');
+            if (countdown.length) {
+                const data_date = countdown.data('date');
+                const countDownDate = new Date(data_date).getTime();
+                // Update the count down every 1 second
+                let x = setInterval(function () {
+                    // Get today's date and time
+                    const now = new Date().getTime();
+                    // Find the distance between now and the count down date
+                    const distance = countDownDate - now;
+                    // Time calculations for days, hours, minutes and seconds
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    // Display the result in the element with id="demo"
+                    $('#cd_d').html(days);
+                    $('#cd_h').html(hours);
+                    $('#cd_m').html(minutes);
+                    $('#cd_s').html(seconds);
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        // document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            }
         }
 
         instance_plugins() {
             // Enable aos animations.
             AOS.init({
-                disable: 'mobile'
+                disable: 'mobile',
+                once: true
             });
             // Enable scrollspy.
             $('body').scrollspy({
