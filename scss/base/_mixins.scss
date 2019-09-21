@@ -85,15 +85,15 @@
   transition: $args;
 }
 
-@mixin box-shadow($top, $left, $blur, $color, $outer:0, $inset: false) {
+@mixin box-shadow($top : 0, $left : 0.5rem, $blur : 1rem, $color: rgba($black,.15), $inset: false) {
   @if $inset {
-    -webkit-box-shadow: inset $top $left $blur $outer $color !important;
-    -moz-box-shadow: inset $top $left $blur $outer $color !important;
-    box-shadow: inset $top $left $blur $outer $color !important;
+    -webkit-box-shadow: inset $top $left $blur $color !important;
+    -moz-box-shadow: inset $top $left $blur $color !important;
+    box-shadow: inset $top $left $blur $color !important;
   } @else {
-    -webkit-box-shadow: $top $left $blur $outer $color !important;
-    -moz-box-shadow: $top $left $blur $outer $color !important;
-    box-shadow: $top $left $blur $outer $color !important;
+    -webkit-box-shadow: $top $left $blur $color !important;
+    -moz-box-shadow: $top $left $blur $color !important;
+    box-shadow: $top $left $blur $color !important;
   }
 }
 

@@ -1,0 +1,26 @@
+section#registration-form.py-0
+    .container
+        .row
+            .col-lg-8.col-md-10.mx-auto
+                form#frm_register(method='post')
+                    h3.form-block-title.mb-3 Basic Information
+                    .form-group
+                        label(for='full_name') Full Name
+                        input#full_name.form-control.form-control-lg(type='text',name='full_name',required)
+                    .form-group
+                        label(for='email_address') Email Address
+                        input#email_address.form-control.form-control-lg(type='email',name='email_address',required)
+                    h3.form-block-title.mb-3.mt-4 Additional Information
+                    .form-group
+                        label(for='company') Company
+                        input#company.form-control.form-control-lg(type='text',name='company',required)
+                    .form-group
+                        label(for='position') Position
+                        input#position.form-control.form-control-lg(type='text',name='position',required)
+                    .form-group
+                        label(for='id_number') ID Number
+                        input#id_number.form-control.form-control-lg(type='text',name='id_number',required)
+                    .form-group
+                        label(for='phone') Phone
+                        input#phone.form-control.form-control-lg(type='text',name='phone',required)
+                    input(type='submit',value='Register').btn.btn-primary.btn-lg.btn-submit-reg

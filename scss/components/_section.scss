@@ -2,17 +2,20 @@
 section {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  @include breakpoint(768) {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-  @include breakpoint(992) {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-  @include breakpoint(1200) {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+
+  &:not(.small) {
+    @include breakpoint(768) {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+    @include breakpoint(992) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+    @include breakpoint(1200) {
+      padding-top: 7.5rem;
+      padding-bottom: 7.5rem;
+    }
   }
 
   h2.section-heading {

@@ -13,6 +13,11 @@
             }
           }
 
+          img.card-img-top {
+            height: 250px;
+            object-fit: cover;
+          }
+
           .card-body {
             position: absolute;
             left: 0;
@@ -41,7 +46,7 @@
                 }
 
                 &:hover {
-                  color: rgba(darken($primary_color, 25%), .5);
+                  color: rgba(lighten($primary_color, 25%), .5);
                 }
               }
             }
