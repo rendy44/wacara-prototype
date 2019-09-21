@@ -5,31 +5,8 @@
   background-color: rgba(lighten($primary_color, 30%), .9);
   z-index: 2;
 
-  &:not(.small) {
-    height: 100vh;
-    min-height: 500px;
-    background-image: url('../img/illustration/events.svg');
-    background-size: auto 80%;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      @include linearGradient(rgba(lighten($primary_color, 30%), .9), rgba(lighten($primary_alt_color, 30%), .9));
-      // Adjust masthead's overlay width and opacity on large screen
-      @include breakpoint(992) {
-        width: 50%;
-        @include opacity(.6);
-      }
-    }
-  }
-
   h1 {
+    mix-blend-mode: multiply;
     color: $primary_color;
     font-weight: 200;
     @include gradient-color;
@@ -55,6 +32,10 @@
     .time {
       width: 25%;
 
+      &:not(:first-child) {
+        padding-left: 1.5rem;
+      }
+
       &:not(:last-child) {
         border-right: 1px solid rgba($black, .07);
       }
@@ -67,10 +48,73 @@
           color: $primary_color;
           font-size: 2.5rem;
           @include gradient-color;
+          mix-blend-mode: multiply;
         }
 
         &:not(.value) {
           display: block;
+        }
+      }
+    }
+  }
+
+  &:not(.small) {
+    height: 100vh;
+    min-height: 500px;
+    background-repeat: no-repeat;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      @include linearGradient(rgba(lighten($primary_color, 30%), .9), rgba(lighten($primary_alt_color, 30%), .9));
+      // Adjust masthead's overlay width and opacity on large screen
+      @include breakpoint(992) {
+        width: 50%;
+        @include opacity(.6);
+      }
+    }
+
+    &.half {
+      //background-image: url('../img/illustration/events.svg');
+      background-size: auto 80%;
+      background-position: bottom right;
+
+      &.right {
+        background-position: bottom left;
+
+        &:before {
+          left: auto;
+          right: 0;
+        }
+
+        .countdown {
+          .time {
+            &:not(:last-child) {
+              padding-left: 0;
+              padding-right: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    &.center {
+      //background-image: url('../img/image1.jpg');
+      background-size: cover;
+      background-position: center center;
+
+      &:before {
+        width: 100%;
+        opacity: 1;
+      }
+
+      .countdown {
+        .time {
+          padding-left: 0;
         }
       }
     }
