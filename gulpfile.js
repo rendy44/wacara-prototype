@@ -72,7 +72,7 @@ function modules() {
 // PUG task
 function pugToHtml() {
     return gulp
-        .src("./templates/*.pug")
+        .src(["./templates/*/*/*.pug", "./templates/*/*.pug", "./templates/*.pug"])
         .pipe(pug({
             pretty: true
         }))

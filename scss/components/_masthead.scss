@@ -6,7 +6,6 @@
   z-index: 2;
 
   h1 {
-    mix-blend-mode: multiply;
     color: $primary_color;
     font-weight: 200;
     @include gradient-color;
@@ -31,10 +30,6 @@
   .countdown {
     .time {
       width: 25%;
-
-      &:not(:first-child) {
-        padding-left: 1.5rem;
-      }
 
       &:not(:last-child) {
         border-right: 1px solid rgba($black, .07);
@@ -79,7 +74,6 @@
     }
 
     &.half {
-      //background-image: url('../img/illustration/events.svg');
       background-size: auto 80%;
       background-position: bottom right;
 
@@ -91,19 +85,18 @@
           right: 0;
         }
 
-        .countdown {
-          .time {
-            &:not(:last-child) {
-              padding-left: 0;
-              padding-right: 1.5rem;
-            }
-          }
-        }
+        //.countdown {
+        //  .time {
+        //    &:not(:last-child) {
+        //      padding-left: 0;
+        //      padding-right: 1.5rem;
+        //    }
+        //  }
+        //}
       }
     }
 
     &.center {
-      //background-image: url('../img/image1.jpg');
       background-size: cover;
       background-position: center center;
 
@@ -112,9 +105,44 @@
         opacity: 1;
       }
 
+      &.dark {
+        &:before {
+          @include linearGradient(rgba($black, .85), rgba($black, .85));
+        }
+
+        p.lead {
+          color: $white;
+        }
+
+        .countdown {
+          .time {
+            border-color: rgba($white, .3);
+
+            span:not(.value) {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    &.text-left {
       .countdown {
         .time {
-          padding-left: 0;
+          &:not(:first-child) {
+            padding-left: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &.text-right {
+      .countdown {
+        .time {
+          &:not(:last-child) {
+            //padding-right: 1.5rem;
+            padding-right: 2rem;
+          }
         }
       }
     }

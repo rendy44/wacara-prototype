@@ -76,4 +76,29 @@ nav.navbar {
       padding-bottom: .75rem !important;
     }
   }
+
+  &.dark {
+    &:not(.scrolled),
+    &:not(.scrolled) {
+      .navbar-toggler {
+        border-color: rgba($white, .2);
+      }
+
+      @include breakpoint(992) {
+        ul.navbar-nav {
+          li.nav-item {
+            &:not(.register) {
+              a.nav-link {
+                color: rgba($white, .5);
+
+                &:hover {
+                  color: rgba($white, .7);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
