@@ -140,8 +140,7 @@
       .countdown {
         .time {
           &:not(:last-child) {
-            //padding-right: 1.5rem;
-            padding-right: 2rem;
+            padding-right: 1.5rem;
           }
         }
       }
