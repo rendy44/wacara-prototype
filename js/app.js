@@ -1,6 +1,6 @@
 (function ($) {
     "use strict"; // Start of use strict
-    class appClass {
+    new class {
         constructor() {
             this.scrollbar();
             this.navbar_toggle();
@@ -8,6 +8,11 @@
             this.instance_plugins();
             this.smooth_scroll_to();
             this.count_down();
+            this.gallery();
+        }
+
+        gallery() {
+            baguetteBox.run('.galleries');
         }
 
         count_down() {
@@ -99,9 +104,6 @@
                 }
             });
         }
-    }
-
-    // Instance the class
-    new appClass();
+    };
 
 })(jQuery); // End of use strict

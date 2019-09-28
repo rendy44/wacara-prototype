@@ -63,10 +63,13 @@ function modules() {
     // AOS Animation
     const aos = gulp.src('./node_modules/aos/dist/**/*')
         .pipe(gulp.dest('./dist/vendor/aos'));
+    // Baguettebox.js
+    const baguette = gulp.src('./node_modules/baguettebox.js/dist/*')
+        .pipe(gulp.dest('./dist/vendor/baguettebox'));
     // jQuery
     const jquery = gulp.src(['./node_modules/jquery/dist/*', '!./node_modules/jquery/dist/core.js'])
         .pipe(gulp.dest('./dist/vendor/jquery'));
-    return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, aos, jquery);
+    return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, aos, baguette, jquery);
 }
 
 // PUG task
