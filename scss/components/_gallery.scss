@@ -1,0 +1,20 @@
+section.gallery {
+  a {
+    cursor: zoom-in;
+
+    img {
+      opacity: .6;
+      @include transition(all .2s);
+    }
+
+    &:hover {
+      img {
+        opacity: 1;
+        @include box-shadow();
+        @include zoom(1.05);
+        z-index: 2;
+        position: relative;
+      }
+    }
+  }
+}

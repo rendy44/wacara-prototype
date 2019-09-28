@@ -114,3 +114,10 @@
   -webkit-filter: grayscale($size);
   -ms-filter: grayscale($size);
 }
+
+@mixin zoom($size:1.2) {
+  transform: scale($size);
+  -moz-transform: scale($size);
+  -o-transform: scale($size);
+  -webkit-transform: scale($size);
+}
