@@ -108,3 +108,9 @@
   -webkit-filter: blur($size);
   -ms-filter: blur($size);
 }
+
+@mixin grayscale($size) {
+  filter: grayscale($size);
+  -webkit-filter: grayscale($size);
+  -ms-filter: grayscale($size);
+}
