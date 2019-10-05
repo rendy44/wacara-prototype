@@ -12,7 +12,7 @@
         }
 
         gallery() {
-            baguetteBox.run('.galleries');
+            baguetteBox.run('.gallery-list');
         }
 
         count_down() {

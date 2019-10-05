@@ -26,13 +26,14 @@ nav.navbar {
   ul.navbar-nav {
     li.nav-item {
       a.nav-link {
+        @include transition(all .2s);
         // Adjust nav item padding on large screen
         @include breakpoint(992) {
           padding: .7rem 1.15rem;
         }
       }
 
-      &.register {
+      &.pricing {
         a.nav-link {
           @include breakpoint(992) {
             border: 1px solid darken($primary_color, 5%);
@@ -66,6 +67,7 @@ nav.navbar {
       img {
         max-height: 40px;
         max-width: 120px;
+        @include opacity(1);
       }
     }
   }
@@ -78,8 +80,14 @@ nav.navbar {
   }
 
   &.dark {
-    &:not(.scrolled),
     &:not(.scrolled) {
+      .navbar-brand {
+        img {
+          @include whiteContrast;
+          @include opacity(.7);
+        }
+      }
+
       .navbar-toggler {
         border-color: rgba($white, .2);
       }
@@ -87,12 +95,12 @@ nav.navbar {
       @include breakpoint(992) {
         ul.navbar-nav {
           li.nav-item {
-            &:not(.register) {
+            &:not(.pricing) {
               a.nav-link {
-                color: rgba($white, .5);
+                color: rgba($white, .7);
 
                 &:hover {
-                  color: rgba($white, .7);
+                  color: rgba($white, 1);
                 }
               }
             }
