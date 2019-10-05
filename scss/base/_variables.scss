@@ -10,5 +10,5 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
-$primary_color: #5e65cb !default;
-$primary_alt_color: #7a8aef !default;
+$primary_color: #6659ae !default;
+$primary_alt_color: lighten($primary_color, 10%) !default;

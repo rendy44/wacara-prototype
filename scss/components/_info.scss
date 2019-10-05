@@ -19,10 +19,10 @@
 
       &:after {
         content: '';
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         @include border-radius(50%);
-        background-color: rgba(lighten($primary_color, 15%), .2);
+        background-color: rgba(lighten($primary_color, 10%), .1);
         position: absolute;
         top: -25px;
         left: calc(50% - 10px);
@@ -34,13 +34,10 @@
 
     h3 {
       font-size: 1.4rem;
-      font-weight: 400;
+      font-weight: 300;
       @include breakpoint(768) {
         font-size: 1.6rem;
         margin-bottom: 1rem;
-      }
-      @include breakpoint(992) {
-        font-weight: 500;
       }
     }
 

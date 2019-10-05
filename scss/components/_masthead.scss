@@ -2,7 +2,8 @@
 .masthead {
   height: 300px;
   position: relative;
-  background-color: rgba(lighten($primary_color, 30%), .9);
+  background-color: $white;
+  //background-color: rgba(lighten($primary_color, 40%), .9);
   z-index: 2;
 
   h1 {
@@ -65,7 +66,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      @include linearGradient(rgba(lighten($primary_color, 30%), .9), rgba(lighten($primary_alt_color, 30%), .9));
+      @include linearGradient(rgba(lighten($primary_color, 35%), .9), rgba(lighten($primary_alt_color, 35%), .9));
       // Adjust masthead's overlay width and opacity on large screen
       @include breakpoint(992) {
         width: 50%;
@@ -84,15 +85,6 @@
           left: auto;
           right: 0;
         }
-
-        //.countdown {
-        //  .time {
-        //    &:not(:last-child) {
-        //      padding-left: 0;
-        //      padding-right: 1.5rem;
-        //    }
-        //  }
-        //}
       }
     }
 
@@ -103,6 +95,7 @@
       &:before {
         width: 100%;
         opacity: 1;
+        @include linearGradient(rgba(lighten($primary_color, 37%), .95), rgba(lighten($primary_alt_color, 37%), .95));
       }
 
       &.dark {
