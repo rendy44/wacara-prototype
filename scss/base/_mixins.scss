@@ -10,12 +10,35 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6b75ff", endColorstr="#59b7ff", GradientType=1);
 }
 
-@mixin gradient-bg() {
-  @include linearGradient($primary_color, $primary_alt_color);
+@mixin gradient-bg($color_1: false, $color_2: false) {
+  @if $color_1 {
+    $color_1: $color_1;
+  } @else {
+    $color_1: $primary_color;
+  }
+
+  @if $color_2 {
+    $color_2: $color_2;
+  } @else {
+    $color_2: $primary_alt_color;
+  }
+  @include linearGradient($color_1, $color_2);
 }
 
-@mixin gradient-color() {
-  @include gradient-bg;
+@mixin gradient-color($color_1: false, $color_2: false) {
+  @if $color_1 {
+    $color_1: $color_1;
+  } @else {
+    $color_1: $primary_color;
+  }
+
+  @if $color_2 {
+    $color_2: $color_2;
+  } @else {
+    $color_2: $primary_alt_color;
+  }
+
+  @include gradient-bg($color_1, $color_2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
